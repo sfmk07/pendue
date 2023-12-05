@@ -66,3 +66,18 @@ while True:
             informations_joueur['parties_jouees'] += 1
             informations_joueur['victoires'] += 1
             break
+# Si toutes les tentatives sont épuisées
+    if tentatives_restantes == 0:
+        print(f">>> Perdu! Le mot était : {mot_a_deviner} <<<")
+        # Mise à jour des informations du joueur
+        informations_joueur['parties_jouees'] += 1
+        informations_joueur['defaites'] += 1
+
+    print(f"\n    * Fin de la partie *    ")
+    print(f"Parties jouées : {informations_joueur['parties_jouees']}")
+    print(f"Victoires : {informations_joueur['victoires']}")
+    print(f"Défaites : {informations_joueur['defaites']}")
+
+    rejouer = input("Voulez-vous rejouer ? (O/N) ").lower()
+    if rejouer != 'o':
+        break
