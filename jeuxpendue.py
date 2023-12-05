@@ -56,3 +56,13 @@ while True:
                 print("/||           ")
             if tentatives_restantes <= 6:
                 print("==============\n")
+# Mise à jour de l'affichage du mot en fonction des lettres trouvées
+        affichage_mot = " ".join([lettre + " " if lettre in lettres_trouvees else "_ " for lettre in mot_a_deviner])
+
+        # Vérification si toutes les lettres ont été trouvées
+        if "_" not in affichage_mot:
+            print(f">>> Gagné! Le mot était : {mot_a_deviner} <<<")
+            # Mise à jour des informations du joueur
+            informations_joueur['parties_jouees'] += 1
+            informations_joueur['victoires'] += 1
+            break
