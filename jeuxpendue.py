@@ -22,4 +22,16 @@ while True:
     
     # Initialisation de la liste des lettres déjà trouvées
     lettres_trouvees = ""
-    
+    # Initialisation du nombre de tentatives
+    tentatives_restantes = 7
+
+    while tentatives_restantes > 0:
+        print("\nMot à deviner : ", affichage_mot)
+        
+        # Proposition de l'utilisateur (saisie de la première lettre)
+        proposition = input("Proposez une lettre : ")[0].lower()
+
+        if proposition in mot_a_deviner:
+            # Ajout de la lettre à la liste des lettres trouvées
+            lettres_trouvees += proposition
+            print("-> Bien vu!")
