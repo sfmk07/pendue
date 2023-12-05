@@ -35,3 +35,24 @@ while True:
             # Ajout de la lettre à la liste des lettres trouvées
             lettres_trouvees += proposition
             print("-> Bien vu!")
+
+        else:
+            # Réduction du nombre de tentatives en cas d'erreur
+            tentatives_restantes -= 1
+            print("-> Nope\n")
+            
+            # Affichage du pendu progressif
+            if tentatives_restantes == 0:
+                print(" ==========Y= ")
+            if tentatives_restantes <= 1:
+                print(" ||/       |  ")
+            if tentatives_restantes <= 2:
+                print(" ||        0  ")
+            if tentatives_restantes <= 3:
+                print(" ||       /|\\ ")
+            if tentatives_restantes <= 4:
+                print(" ||       / \\ ")
+            if tentatives_restantes <= 5:
+                print("/||           ")
+            if tentatives_restantes <= 6:
+                print("==============\n")
